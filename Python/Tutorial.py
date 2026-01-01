@@ -166,7 +166,7 @@ print("[딕셔너리 쌍 추가]")
 dic['key4'] = 'value4'
 print(dic)
 # 딕셔너리 요소 삭제
-print("[딕셔너리 요소 삭]")
+print("[딕셔너리 요소 삭제]")
 del dic['key4']
 print(dic)
 # 딕셔너리에서 Key를 사용해 Value 얻기
