@@ -6,22 +6,24 @@
 # 식을 적절하게 분리하여, 더하면 됩니다.
 # 시간 복잡도는 O(N)입니다.
 
-T = int(input())
 result = 0
+T = int(input())
 
-for _ in range(T):
-    a, op, b = input().split()
-    a = int(a)
-    b = int(b)
+for i in range(T):
+    s = input().split()
+    firstNum = int(s[0])
+    command = s[1]
+    secondNum = int(s[2])
 
-    if op == '+':
-        result = a + b # 덧셈 결과
-    elif op == '-':
-        result = a - b # 뺄셈 결과
-    elif op == '*':
-        result = a * b # 곱셉 결과
-    elif op == '/':
-        result = a // b # 정수 나눗셈 결과
+    if command == "+":
+        result += firstNum + secondNum
+    elif command == "-":
+        result += firstNum - secondNum
+    elif command == "*":
+        result += firstNum * secondNum
+    else:
+        result += firstNum // secondNum
+
 print(result)
 
 
