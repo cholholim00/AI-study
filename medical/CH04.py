@@ -12,7 +12,7 @@ print("\n--- 1. 필터링 결과 (30대 & 혈압 130↑) ---")
 print(df)
 
 # **No.12 정렬하기 (`sort_values`):** "혈당 높은 순서대로 줄 세우기"
-sort_df = medical_data.sort_values(by='혈당', ascending=False)
+sort_df = medical_data.sort_values(by='혈당', ascending=False) # ascending=False는 내림차순(큰 숫자부터) 정렬
 print("\n--- 2. 혈당 높은 순서대로 줄 세우기 ---")
 print(sort_df)
 
@@ -23,3 +23,19 @@ print(select_df)
 
 # - **No.14 "고위험군 랭킹 매기기"**
 # - 가상의 환자 데이터 10개를 만들고, **'나이가 60세 이상'**이면서 **'혈당이 140 이상'**인 환자를 뽑은 뒤, **혈당이 높은 순서대로** 정렬해서 출력하세요.
+name_data = {
+    '이름': ['강서준', '김도윤', '이현우', '박지민', '최성민', '정예준', '조현진', '윤도현', '장우진', '임지훈'],
+    '나이': [72, 34, 65, 40, 61, 22, 68, 75, 21, 55],
+    '혈당': [150, 199, 145, 127, 160, 158, 118, 140, 84, 120]
+}
+df = pd.DataFrame(name_data)
+
+print("\n1. 나이가 60세 이상 이면서 혈당이 140 이상인 환자")
+filtering_data = (df["나이"] >= 60) & (df["혈당"] >= 140)
+df1 = df[filtering_data]
+print(df1)
+
+print("\n2. 혈당이 높은 순서")
+result = df1.sort_values(by= "혈당", ascending=False)
+print(result)
+
