@@ -20,4 +20,6 @@ fig.update_layout(
     template='plotly_white',
     hovermode='x unified'
 )
+
+print("✅ A팀 분석 그래프 생성 완료!")
 fig.show()

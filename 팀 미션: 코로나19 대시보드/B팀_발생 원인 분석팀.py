@@ -31,7 +31,7 @@ def run_b_team():
 
         fig.update_layout(xaxis={'categoryorder':'total descending'}, template='plotly_white')
         fig.show()
-        print(f"✅ {latest_date} 지역별 그래프 생성 완료!")
+        print(f"✅ {latest_date} B팀 분석 그래프 생성 완료!")
 
     except Exception as e:
         print(f"❌ B팀 에러 발생: {e}")
