@@ -1,0 +1,173 @@
+/* === 기존 스타일 유지 === */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    transition: background 0.3s, 
+    color 0.3s; 
+}
+
+body { 
+    font-family: sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #f9f9f9; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+ul { 
+    list-style: none; 
+}
+
+/* 헤더 & 네비게이션 */
+header { 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+}
+
+.navbar { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 1rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: #2563eb; 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 2rem; 
+    align-items: center; 
+}
+
+/* 버튼 스타일 */
+.theme-btn { 
+    background: none; 
+    border: none; 
+    font-size: 1.2rem; 
+    cursor: pointer; 
+}
+
+.menu-toggle { 
+    display: none; 
+    flex-direction: column; 
+    gap: 5px; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.menu-toggle span { 
+    width: 25px; 
+    height: 3px; 
+    background-color: #333; 
+}
+
+/* 히어로 섹션 */
+.hero { 
+    background: linear-gradient(135deg, #2563eb, #1e40af); 
+    color: white; 
+    padding: 5rem 2rem; 
+    text-align: center; 
+}
+
+.btn { 
+    background-color: white; 
+    color: #2563eb; 
+    padding: 0.8rem 1.5rem; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    border: none; 
+    display: inline-block; 
+    margin-top: 1rem; 
+}
+
+.btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+}
+
+/* 메인 콘텐츠 */
+.container { 
+    max-width: 1200px; 
+    margin: 3rem auto; 
+    padding: 0 2rem; 
+}
+
+.section-title { 
+    text-align: center; 
+    margin-bottom: 2rem; 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+}
+
+.card { 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+}
+
+/* 푸터 */
+footer { background-color: #1f2937; color: #9ca3af; text-align: center; padding: 2rem; margin-top: 4rem; }
+
+/* === [NEW] 다크 모드 스타일 (body에 dark-mode 클래스가 붙으면 적용) === */
+body.dark-mode { 
+    background-color: #121212; 
+    color: #e0e0e0; 
+}
+
+body.dark-mode header, body.dark-mode .card { 
+    background-color: #1e1e1e; 
+    color: #e0e0e0; 
+    box-shadow: none; 
+}
+
+body.dark-mode .menu-toggle span { 
+    background-color: #121212; 
+}
+
+body.dark-mode .section-title { 
+    color: #fff; 
+}
+
+/* === [NEW] 모바일 반응형 처리 === */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; } /* 햄버거 버튼 보이기 */
+    
+    .nav-links {
+        display: none; /* 기본적으로 숨김 */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+
+    /* 다크모드일 때 모바일 메뉴 배경 */
+    body.dark-mode .nav-links { background-color: #1e1e1e; }
+
+    /* JS로 active 클래스가 붙으면 보이기 */
+    .nav-links.active { display: flex; }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구현해보기 기초 웹사이트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">BrandLogo</div>
+
+            <button class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#">소개</a></li>
+                <li><a href="#">서비스</a></li>
+                <li><a href="#">포트폴리오</a></li>
+                <li><a href="#">연락처</a></li>
+                <li><button id="theme-toggle" class="theme-btn">다크모드</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>하나의 세션으로 만드는 컨테이너</h1>
+            <p>HTML과 CSS 파일을 분리하여 관리와 유지보수를 간단하게하자.</p>
+            <button class="btn" onclick="alert('환영합니다!')">시작하기</button>
+        </div>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">주요 기능</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>다크 모드</h3>
+                <p>우측 상단 달 모양 버튼을 눌러보세요. CSS 클래스를 제어하여 테마를 바꿉니다.</p>
+            </div>
+            <div class="card">
+                <h3>모바일 메뉴</h3>
+                <p>창 크기를 줄이면 메뉴가 사라지고 햄버거 버튼이 나타납니다.</p>
+            </div>
+            <div class="card">
+                <h3>클릭 이벤트</h3>
+                <p>시작하기버튼을 누르면 알림창이 뜹니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; day별로의 실습해보기</p>
+    </footer>
+
+    <script src="../day2/script.js"></script>
+</body>
+</html>
