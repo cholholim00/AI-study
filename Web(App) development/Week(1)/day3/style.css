@@ -1,0 +1,65 @@
+/* === 1. 기본 스타일 === */
+* { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* === 2. 헤더 & 네비게이션 === */
+header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+.navbar { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; color: #2563eb; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+
+/* 버튼 스타일 */
+.theme-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; }
+.menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.menu-toggle span { width: 25px; height: 3px; background-color: #333; border-radius: 2px; }
+
+/* === 3. 히어로 섹션 === */
+.hero { background: linear-gradient(135deg, #2563eb, #1e40af); color: white; padding: 4rem 2rem; text-align: center; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.1rem; opacity: 0.9; }
+
+/* === 4. 메인 콘텐츠 === */
+.container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
+.section-title { text-align: center; margin-bottom: 2rem; font-size: 1.8rem; }
+
+/* 그리드 & 카드 */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+.card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; text-align: center; }
+.card h3 { margin-bottom: 1rem; color: #111; }
+.card p { color: #666; font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+/* 공통 버튼 디자인 */
+.btn { background-color: #2563eb; color: white; padding: 0.8rem 1.5rem; border-radius: 5px; font-weight: bold; border: none; cursor: pointer; transition: transform 0.2s; display: inline-block; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.btn:disabled { background-color: #9ca3af; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* === 5. API 이미지 컨테이너 === */
+.image-container { width: 100%; height: 250px; background-color: #e5e7eb; border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+#fox-image { width: 100%; height: 100%; object-fit: cover; display: none; }
+
+/* === 6. 푸터 === */
+footer { background-color: #1f2937; color: #9ca3af; text-align: center; padding: 2rem; margin-top: auto; }
+
+/* === 7. 다크 모드 (body.dark-mode) === */
+body.dark-mode { background-color: #121212; color: #e0e0e0; }
+body.dark-mode header, 
+body.dark-mode .card { background-color: #1e1e1e; border-color: #333; box-shadow: none; }
+body.dark-mode .card h3 { color: #fff; }
+body.dark-mode .card p { color: #aaa; }
+body.dark-mode .menu-toggle span { background-color: #fff; }
+body.dark-mode .image-container { background-color: #333; }
+
+/* === 8. 모바일 반응형 === */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; width: 100%;
+        background-color: white; flex-direction: column; padding: 1rem 0;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    }
+    body.dark-mode .nav-links { background-color: #1e1e1e; }
+    .nav-links.active { display: flex; }
+    .hero h1 { font-size: 2rem; }
+}
